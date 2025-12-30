@@ -1,0 +1,88 @@
+type Query {
+  customers: [CustomerDTO]
+  customerByIdentity(identityRef: String!): CustomerDTO
+
+  bankAccounts: [BankAccountDTO]
+  bankAccountByRib(rib: String!): BankAccountDTO
+}
+
+type Mutation {
+  createCustomer(dto: AddCustomerInput!): AddCustomerResponse
+  updateCustomer(identityRef: String!, dto: UpdateCustomerInput!): UpdateCustomerResponse
+  deleteCustomer(identityRef: String!): String
+
+  addBankAccount(dto: AddBankAccountInput!): AddBankAccountResponse
+  addWirerTransfer(dto: AddWirerTransferInput!): AddWirerTransferResponse
+}
+
+type CustomerDTO {
+  id: ID
+  username: String
+  identityRef: String
+  firstname: String
+  lastname: String
+}
+
+type BankAccountDTO {
+  id: ID
+  rib: String
+  amount: Float
+  createdAt: String
+  accountStatus: String
+  customerIdentityRef: String
+}
+
+type TransactionDTO {
+  createdAt: String
+  transactionType: String
+  amount: Float
+  rib: String
+  username: String
+}
+
+input AddCustomerInput {
+  username: String!
+  identityRef: String!
+  firstname: String!
+  lastname: String!
+}
+
+type AddCustomerResponse {
+  message: String
+  customer: CustomerDTO
+}
+
+input UpdateCustomerInput {
+  username: String!
+  firstname: String!
+  lastname: String!
+}
+
+type UpdateCustomerResponse {
+  message: String
+  customer: CustomerDTO
+}
+
+input AddBankAccountInput {
+  rib: String!
+  amount: Float!
+  customerIdentityRef: String!
+}
+
+type AddBankAccountResponse {
+  message: String
+  bankAccount: BankAccountDTO
+}
+
+input AddWirerTransferInput {
+  ribFrom: String!
+  ribTo: String!
+  amount: Float!
+  username: String!
+}
+
+type AddWirerTransferResponse {
+  message: String
+  transactionFrom: TransactionDTO
+  transactionTo: TransactionDTO
+}
