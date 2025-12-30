@@ -261,30 +261,13 @@ Authorization: Bearer <JWT>
 
 
 
-### ❌ Accès refusé (ROLE_CLIENT → 500) <br/>
 
-#### Même endpoint avec un utilisateur client. <br/>
-
-| Accès refusé    |
-|-----------------|
-| ![](docs/5.png) |
-| ![](docs/6.png) |
-
----
-
-## ⚠️ Remarques importantes <br/>
-
-- Sécurité stateless (JWT) <br/>
-- Aucun stockage de session <br/>
-- H2 en mémoire pour les tests  <br/>
-- REST sécurisé, autres connecteurs conservés <br/>
-- Architecture claire et modulaire  <br/>
 
 ---
 
 ## 👥 Auteurs
 
-Anas KRIR & Adam EL YOURI <br/>
+Mallouk Mohammed Taha <br/>
 Étudiants Ingénieurs — MIAGE <br/>
 
 TP réalisé dans le cadre du module : ARCHITECTURE DES COMPOSANTS D’ENTREPRISES <br/>
@@ -300,6 +283,6 @@ Java · Spring Boot · Spring Security · JWT · REST · GraphQL · SOAP · gRPC
 ✅ Projet sous licence MIT<br/>
 Libre d’utilisation à des fins pédagogiques. <br/>
 
-© 2025 — Anas KRIR & Adam EL YOURI <br/>
+© 2025 — Mallouk Mohammed Taha <br/>
 
 ---
